@@ -21,6 +21,7 @@ public class SingupJFrame extends javax.swing.JFrame {
     public SingupJFrame() {
         initComponents();
         this.multiPainel = multiPainel;
+        setExtendedState(MAXIMIZED_BOTH);
         //COLOCAR O ICONE DO PROGRAMA
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/cadEuroChem/img/logoIcon.png")));
     }
@@ -55,17 +56,21 @@ public class SingupJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PMSYS v0.1");
-        setSize(new java.awt.Dimension(1238, 720));
+        setBackground(new java.awt.Color(1, 45, 69));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel1.setBackground(new java.awt.Color(1, 45, 69));
         jPanel1.setPreferredSize(new java.awt.Dimension(556, 410));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Aveline", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Aveline", 0, 100)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(222, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/logoIcon.png"))); // NOI18N
         jLabel1.setText("EUROCHEM");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 24, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 96, -1, -1));
 
         buttonSave.setBackground(new java.awt.Color(0, 255, 0));
         buttonSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/icon3.png"))); // NOI18N
@@ -74,7 +79,7 @@ public class SingupJFrame extends javax.swing.JFrame {
                 buttonSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 300, 84, 60));
+        jPanel1.add(buttonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 576, 144, 60));
 
         buttonClose.setBackground(new java.awt.Color(255, 51, 51));
         buttonClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/return.png"))); // NOI18N
@@ -83,34 +88,34 @@ public class SingupJFrame extends javax.swing.JFrame {
                 buttonCloseActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 300, 84, 60));
+        jPanel1.add(buttonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(948, 576, 144, 60));
 
         Name.setBackground(new java.awt.Color(255, 255, 255));
-        Name.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jPanel1.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 144, 300, 36));
+        Name.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        jPanel1.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(588, 288, 360, 36));
 
         Password.setBackground(new java.awt.Color(255, 255, 255));
-        Password.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 240, 300, 36));
+        Password.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(588, 408, 360, 36));
 
         Email.setBackground(new java.awt.Color(255, 255, 255));
-        Email.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jPanel1.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 192, 300, 36));
+        Email.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        jPanel1.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(588, 348, 360, 36));
 
-        labelNome.setFont(new java.awt.Font("Aveline", 0, 18)); // NOI18N
+        labelNome.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
         labelNome.setForeground(new java.awt.Color(222, 255, 255));
         labelNome.setText("NOME:");
-        jPanel1.add(labelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 153, 70, -1));
+        jPanel1.add(labelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 300, 84, -1));
 
-        labelEmail.setFont(new java.awt.Font("Aveline", 0, 18)); // NOI18N
+        labelEmail.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
         labelEmail.setForeground(new java.awt.Color(222, 255, 255));
         labelEmail.setText("EMAIL:");
-        jPanel1.add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 195, 70, -1));
+        jPanel1.add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 360, 84, -1));
 
-        labelSenha.setFont(new java.awt.Font("Aveline", 0, 18)); // NOI18N
+        labelSenha.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
         labelSenha.setForeground(new java.awt.Color(222, 255, 255));
         labelSenha.setText("SENHA:");
-        jPanel1.add(labelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 252, -1, -1));
+        jPanel1.add(labelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 420, -1, -1));
 
         buttonClear.setBackground(new java.awt.Color(255, 255, 51));
         buttonClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/imgClear.png"))); // NOI18N
@@ -119,19 +124,19 @@ public class SingupJFrame extends javax.swing.JFrame {
                 buttonClearActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 300, 84, 60));
+        jPanel1.add(buttonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 576, 144, 60));
 
-        jLabel5.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Aveline", 0, 48)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("SINGOUT");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 108, 108, 24));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 204, 252, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1826, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,18 +199,18 @@ public class SingupJFrame extends javax.swing.JFrame {
     */
     }//GEN-LAST:event_buttonSaveActionPerformed
     
+    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClearActionPerformed
+        // TODO add your handling code here:
+        //Botão de Limpar
+        limparTexto();
+    }//GEN-LAST:event_buttonClearActionPerformed
+
     private void buttonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseActionPerformed
         // TODO add your handling code here:
         //Botão de Sair
         System.out.println("THANKS!");
         System.exit(0);
     }//GEN-LAST:event_buttonCloseActionPerformed
-
-    private void buttonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClearActionPerformed
-        // TODO add your handling code here:
-        //Botão de Limpar
-        limparTexto();
-    }//GEN-LAST:event_buttonClearActionPerformed
 
     /**
      * @param args the command line arguments

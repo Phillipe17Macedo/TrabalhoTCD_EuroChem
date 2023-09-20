@@ -10,9 +10,9 @@ package cadEuroChem;
  */
 public class Fornecedor {
     private String nameFornecedor;
-    private String numeroFornecedor;
+    private int numeroFornecedor;
     
-    public Fornecedor(String nomeFornecedor, String numFornecedor){
+    public Fornecedor(String nomeFornecedor, int numFornecedor){
         this.nameFornecedor = nomeFornecedor;
         this.numeroFornecedor = numFornecedor;
     }
@@ -21,7 +21,7 @@ public class Fornecedor {
         return nameFornecedor;
     }
 
-    public String getNumeroFornecedor() {
+    public int getNumeroFornecedor() {
         return numeroFornecedor;
     }
 
@@ -34,6 +34,6 @@ public class Fornecedor {
             return false;
         }
         Fornecedor fornecedores = (Fornecedor) obj;
-        return numeroFornecedor.equals(fornecedores.numeroFornecedor) && nameFornecedor.equals(fornecedores.nameFornecedor);
+        return numeroFornecedor == fornecedores.numeroFornecedor && nameFornecedor.equals(fornecedores.nameFornecedor);
     }    
 }

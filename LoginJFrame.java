@@ -26,6 +26,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
         //COLOCAR ICONE DO PROGRAMA NA PÁGINA
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/cadEuroChem/img/logoIcon.png")));
         
@@ -65,32 +66,36 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PMSYS v0.1");
-        setSize(new java.awt.Dimension(1238, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel1.setBackground(new java.awt.Color(1, 45, 69));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 237, 237)));
         jPanel1.setPreferredSize(new java.awt.Dimension(556, 410));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Aveline", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Aveline", 0, 80)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(222, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/logoIcon.png"))); // NOI18N
         jLabel1.setText("EUROCHEM");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 24, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 48, 576, 192));
 
-        labelNome.setFont(new java.awt.Font("Aveline", 0, 18)); // NOI18N
+        labelNome.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
         labelNome.setForeground(new java.awt.Color(222, 255, 255));
+        labelNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelNome.setText("NOME:");
-        jPanel1.add(labelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 185, -1, -1));
+        jPanel1.add(labelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 336, -1, -1));
 
         Name.setBackground(new java.awt.Color(255, 255, 255));
-        Name.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jPanel1.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 175, 262, 35));
+        Name.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        jPanel1.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 324, 432, 35));
 
-        labelSenha.setFont(new java.awt.Font("Aveline", 0, 18)); // NOI18N
+        labelSenha.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
         labelSenha.setForeground(new java.awt.Color(222, 255, 255));
+        labelSenha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelSenha.setText("SENHA:");
-        jPanel1.add(labelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 218, 67, 37));
+        jPanel1.add(labelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 372, 96, 37));
 
         buttonSave.setBackground(new java.awt.Color(0, 255, 0));
         buttonSave.setFont(new java.awt.Font("Aveline", 0, 11)); // NOI18N
@@ -100,7 +105,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                 buttonSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 312, 94, 56));
+        jPanel1.add(buttonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 468, 156, 60));
 
         buttonClose.setBackground(new java.awt.Color(255, 51, 51));
         buttonClose.setFont(new java.awt.Font("Aveline", 0, 11)); // NOI18N
@@ -111,32 +116,32 @@ public class LoginJFrame extends javax.swing.JFrame {
                 buttonCloseActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 312, 94, 56));
+        jPanel1.add(buttonClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(828, 468, 156, 60));
 
         Password.setBackground(new java.awt.Color(255, 255, 255));
-        Password.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        Password.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 216, 262, 37));
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 372, 432, 37));
 
-        jLabel4.setFont(new java.awt.Font("Aveline", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Aveline", 0, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("LOGIN");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 120, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 228, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1402, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("");

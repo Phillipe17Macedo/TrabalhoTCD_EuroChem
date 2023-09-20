@@ -9,20 +9,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import cadEuroChem.MultiPainel;
+import javax.swing.JOptionPane;
 /**
  *
  * @author phsto
  */
 public class MultiPainel extends javax.swing.JFrame {
-    private ArrayList<Fornecedor> fornecedor = new ArrayList<>();
+    private ArrayList<Fornecedor> fornecedores = new ArrayList<>();
     private LoginJFrame loginJFrame;
 
     public MultiPainel(LoginJFrame loginFrame) {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
         // COLOCAR O ÍCONE DO PROGRAMA NO CANTO DA PÁGINA
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/cadEuroChem/img/logoIcon.png")));
         this.loginJFrame = loginFrame; // Armazene a referência para uso posterior
-        buttonCadastrar.addActionListener(new ActionListener() {
+        buttonCadastrarUsuario.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Código para abrir a janela de cadastro (SingupJFrame)
@@ -33,7 +35,7 @@ public class MultiPainel extends javax.swing.JFrame {
     }
     public Fornecedor getCadastroFornecedor(){
         String auxNameFornecedor = campoNameFornecedor.getText(); // Obtém o valor do campo de nome
-        String auxNumFornecedor = campoNumeroFornecedor.getText(); // Obtém o valor do campo de número
+        int auxNumFornecedor = Integer.parseInt(campoNumeroFornecedor.getText()); // Obtém o valor do campo de número
         return new Fornecedor(auxNameFornecedor, auxNumFornecedor);
     }
     
@@ -57,60 +59,71 @@ public class MultiPainel extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         buttonSaveFornecedor = new javax.swing.JButton();
         buttonClearFornecedor = new javax.swing.JButton();
-        buttonCloseFornecedor = new javax.swing.JButton();
         campoNumeroFornecedor = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         campoNameFornecedor = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        startTime = new javax.swing.JButton();
+        pauseTime = new javax.swing.JButton();
+        resetTime = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        buttonCadastrar = new javax.swing.JButton();
+        buttonCadastrarUsuario = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        buttonCloseClose = new javax.swing.JButton();
+        buttonCloseMultiPainel = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PMSYS v0.1");
-        setPreferredSize(new java.awt.Dimension(554, 410));
-        setSize(new java.awt.Dimension(1238, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1920, 1080));
 
-        jTabbedPane1.setBackground(new java.awt.Color(51, 100, 225));
+        jTabbedPane1.setBackground(new java.awt.Color(1, 45, 69));
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(606, 383));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(606, 383));
         jTabbedPane1.setRequestFocusEnabled(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel1.setBackground(new java.awt.Color(1, 45, 69));
         jPanel1.setToolTipText("");
         jPanel1.setPreferredSize(new java.awt.Dimension(556, 410));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Aveline", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Aveline", 1, 100)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/logoIcon.png"))); // NOI18N
         jLabel1.setText("PMSYS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 48, 180, 48));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 108, 468, 144));
 
-        jLabel2.setFont(new java.awt.Font("Aveline", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Aveline", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("V0.1");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 48, -1, 12));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/logoIcon.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 24, -1, -1));
+        jLabel2.setText("V0.3");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 180, 96, 36));
 
         jTabbedPane1.addTab("HOME", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel2.setBackground(new java.awt.Color(1, 45, 69));
         jPanel2.setMinimumSize(new java.awt.Dimension(606, 383));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -119,7 +132,12 @@ public class MultiPainel extends javax.swing.JFrame {
         buttonSaveFornecedor.setMaximumSize(new java.awt.Dimension(98, 74));
         buttonSaveFornecedor.setMinimumSize(new java.awt.Dimension(98, 74));
         buttonSaveFornecedor.setPreferredSize(new java.awt.Dimension(98, 74));
-        jPanel2.add(buttonSaveFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 252, 86, 61));
+        buttonSaveFornecedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSaveFornecedorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(buttonSaveFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 480, 132, 61));
 
         buttonClearFornecedor.setBackground(new java.awt.Color(255, 255, 51));
         buttonClearFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/imgClear.png"))); // NOI18N
@@ -128,135 +146,192 @@ public class MultiPainel extends javax.swing.JFrame {
                 buttonClearFornecedorActionPerformed(evt);
             }
         });
-        jPanel2.add(buttonClearFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 252, 86, 61));
-
-        buttonCloseFornecedor.setBackground(new java.awt.Color(255, 51, 51));
-        buttonCloseFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/return.png"))); // NOI18N
-        jPanel2.add(buttonCloseFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 252, 86, 61));
+        jPanel2.add(buttonClearFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 480, 132, 61));
 
         campoNumeroFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        campoNumeroFornecedor.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jPanel2.add(campoNumeroFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 144, 276, 24));
+        campoNumeroFornecedor.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        jPanel2.add(campoNumeroFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 324, 420, 36));
 
-        jLabel6.setFont(new java.awt.Font("Aveline", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Aveline", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("NOME:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 96, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 252, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Aveline", 1, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Aveline", 1, 80)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("DADOS DO FORNECEDOR");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 12, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(288, 60, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Aveline", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Aveline", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("NÚMERO:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 144, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 336, -1, 24));
 
         campoNameFornecedor.setBackground(new java.awt.Color(255, 255, 255));
-        campoNameFornecedor.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        jPanel2.add(campoNameFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 96, 276, 24));
+        campoNameFornecedor.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
+        jPanel2.add(campoNameFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 420, 36));
+
+        jLabel10.setFont(new java.awt.Font("Aveline", 0, 28)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("FORNECEDORES CADASTRADOS");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(888, 180, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Aveline", 0, 28)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("NOME");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(888, 240, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Aveline", 0, 28)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("STATUS");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 240, -1, -1));
+
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setFont(new java.awt.Font("Aveline", 0, 21)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(1, 45, 69));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---", "ALPHA", "PRECISMEC", "MOTTA", "HCI", "RESINAR" }));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 288, 228, 36));
+
+        jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBox2.setFont(new java.awt.Font("Aveline", 0, 21)); // NOI18N
+        jComboBox2.setForeground(new java.awt.Color(1, 45, 69));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----", "EM DIA", "ATRASADO", "EM DIA", "ATRASADO", " " }));
+        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 288, 228, 36));
 
         jTabbedPane1.addTab("FORNECEDOR", jPanel2);
 
-        jPanel3.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel3.setBackground(new java.awt.Color(1, 45, 69));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Aveline", 1, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Aveline", 1, 63)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("TIME:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 324, 228, -1));
 
-        jLabel5.setFont(new java.awt.Font("Aveline", 1, 48)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Aveline", 1, 63)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("DATE:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 408, 228, 72));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(218, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(221, Short.MAX_VALUE))
-        );
+        startTime.setBackground(new java.awt.Color(51, 51, 51));
+        startTime.setForeground(new java.awt.Color(0, 0, 0));
+        startTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/icons8-reproduzir-96.png"))); // NOI18N
+        jPanel3.add(startTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 540, 180, 96));
 
-        jTabbedPane1.addTab("TENPO", jPanel3);
+        pauseTime.setBackground(new java.awt.Color(51, 51, 51));
+        pauseTime.setForeground(new java.awt.Color(0, 0, 0));
+        pauseTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/icons8-parar-96.png"))); // NOI18N
+        jPanel3.add(pauseTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 540, 180, 96));
 
-        jPanel5.setBackground(new java.awt.Color(51, 100, 225));
+        resetTime.setBackground(new java.awt.Color(51, 51, 51));
+        resetTime.setForeground(new java.awt.Color(0, 0, 0));
+        resetTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/icons8-compromisso-recorrente-96.png"))); // NOI18N
+        jPanel3.add(resetTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(996, 540, 180, 96));
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Aveline", 1, 63)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("NÚMERO:");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 228, -1, -1));
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Aveline", 1, 63)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("NOME:");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 144, -1, -1));
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 156, 720, 48));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 240, 720, 48));
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 324, 720, 48));
+
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 408, 720, 48));
+
+        jTabbedPane1.addTab("TEMPO", jPanel3);
+
+        jPanel5.setBackground(new java.awt.Color(1, 45, 69));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addGap(0, 1446, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
+            .addGap(0, 753, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("USUÁRIO", jPanel5);
 
-        jPanel6.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel6.setBackground(new java.awt.Color(1, 45, 69));
 
-        buttonCadastrar.setBackground(new java.awt.Color(0, 255, 0));
-        buttonCadastrar.setFont(new java.awt.Font("Aveline", 1, 24)); // NOI18N
-        buttonCadastrar.setForeground(new java.awt.Color(0, 0, 0));
-        buttonCadastrar.setText("CADASTRAR");
-        buttonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        buttonCadastrarUsuario.setBackground(new java.awt.Color(0, 255, 0));
+        buttonCadastrarUsuario.setFont(new java.awt.Font("Aveline", 1, 36)); // NOI18N
+        buttonCadastrarUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        buttonCadastrarUsuario.setText("CADASTRAR");
+        buttonCadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCadastrarActionPerformed(evt);
+                buttonCadastrarUsuarioActionPerformed(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("Aveline", 1, 80)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("CADASTRAR USUÁRIO");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(buttonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(596, 596, 596)
+                        .addComponent(buttonCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(318, 318, 318)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 889, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(buttonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGap(139, 139, 139)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(buttonCadastrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CADASTRO", jPanel6);
 
-        jPanel4.setBackground(new java.awt.Color(51, 100, 225));
+        jPanel4.setBackground(new java.awt.Color(1, 45, 69));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonCloseClose.setBackground(new java.awt.Color(255, 51, 51));
-        buttonCloseClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/return.png"))); // NOI18N
-        buttonCloseClose.addActionListener(new java.awt.event.ActionListener() {
+        buttonCloseMultiPainel.setBackground(new java.awt.Color(255, 51, 51));
+        buttonCloseMultiPainel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cadEuroChem/img/return.png"))); // NOI18N
+        buttonCloseMultiPainel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCloseCloseActionPerformed(evt);
+                buttonCloseMultiPainelActionPerformed(evt);
             }
         });
-        jPanel4.add(buttonCloseClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 168, 330, 74));
+        jPanel4.add(buttonCloseMultiPainel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 432, 330, 74));
 
-        jLabel9.setFont(new java.awt.Font("Aveline", 1, 48)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Aveline", 1, 80)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("ATÉ LOGO!");
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 48, 324, 72));
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 144, 504, 72));
 
         jTabbedPane1.addTab("SAIR", jPanel4);
 
@@ -264,33 +339,44 @@ public class MultiPainel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1451, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonCloseCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseCloseActionPerformed
+    private void buttonCloseMultiPainelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCloseMultiPainelActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_buttonCloseCloseActionPerformed
-
+    }//GEN-LAST:event_buttonCloseMultiPainelActionPerformed
+/*
     private void buttonClearFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClearFornecedorActionPerformed
+    }//GEN-LAST:event_buttonClearFornecedorActionPerformed
+*/
+    private void buttonCadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonCadastrarUsuarioActionPerformed
+
+    private void buttonSaveFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSaveFornecedorActionPerformed
+        // TODO add your handling code here:
+        Fornecedor novoFornecedor = getCadastroFornecedor();
+        fornecedores.add(novoFornecedor);
+        limparTexto();
+        System.out.println("FORNECEDOR: " + novoFornecedor.getNameFornecedor() +
+                "\nNUMERO: " + novoFornecedor.getNumeroFornecedor());
+        JOptionPane.showMessageDialog(this, "SALVO COM SUCESSO!");
+    }//GEN-LAST:event_buttonSaveFornecedorActionPerformed
+    
+    private void buttonClearFornecedorActionPerformed(java.awt.event.ActionEvent evt) {                                                      
         // TODO add your handling code here:
         limparTexto();
-    }//GEN-LAST:event_buttonClearFornecedorActionPerformed
-
-    private void buttonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCadastrarActionPerformed
-
+    }                 
+    
     /**
      * @param args the command line arguments
      */
@@ -328,14 +414,20 @@ public class MultiPainel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonCadastrar;
+    private javax.swing.JButton buttonCadastrarUsuario;
     private javax.swing.JButton buttonClearFornecedor;
-    private javax.swing.JButton buttonCloseClose;
-    private javax.swing.JButton buttonCloseFornecedor;
+    private javax.swing.JButton buttonCloseMultiPainel;
     private javax.swing.JButton buttonSaveFornecedor;
     private javax.swing.JTextField campoNameFornecedor;
     private javax.swing.JTextField campoNumeroFornecedor;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -351,5 +443,12 @@ public class MultiPainel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton pauseTime;
+    private javax.swing.JButton resetTime;
+    private javax.swing.JButton startTime;
     // End of variables declaration//GEN-END:variables
 }
